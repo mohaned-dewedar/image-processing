@@ -8,7 +8,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  height: calc(100vh - 300px);  /* Adjust height based on viewport */
+  height: calc(100vh - 300px);  
 }
 .image-section {
   flex: 0 0 45%;
@@ -20,8 +20,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  width: 100%;  /* Make container width responsive */
-  height: 70%;  /* Make container height responsive */
+  width: 100%;  
+  height: 70%;  
   border: 2px solid #ccc;
   padding: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
