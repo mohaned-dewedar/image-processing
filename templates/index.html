@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Vision Showcase</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Computer Vision Showcase</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" id="image-upload" name="image" required>
+        <select id="operation" name="operation" required>
+            <option value="gaussian_blur">Gaussian Blur</option>
+            <option value="add_noise">Add Noise</option>
+            <option value="sift">SIFT</option>
+            <option value="edge_detection">Edge Detection</option>
+            <option value="convert_to_grayscale">Convert to Grayscale</option>
+            <option value="apply_threshold">Apply Threshold</option>
+        </select>
+        <input type="number" id="ksize" name="ksize" placeholder="Kernel Size (for blur)" min="1">
+        <input type="number" id="threshold-value" name="threshold_value" placeholder="Threshold Value (0-255)" min="0" max="255" class="hidden">
+        <button type="submit">Upload and Process</button>
+        <button type="button" id="reset-button">Reset</button>
+    </form>
+    <div id="result" class="container">
+        <div class="image-section">
+            <h2 class="hidden">Uploaded Image:</h2>
+            <div class="image-container hidden">
+                <img id="uploaded-image" src="" alt="Uploaded Image">
+            </div>
+        </div>
+        <div class="image-section">
+            <h2 class="hidden">Processed Image:</h2>
+            <div class="image-container hidden">
+                <img id="processed-image" src="" alt="Processed Image">
+            </div>
+        </div>
+    </div>
+    <div>
+        <a href="/view_processed_image" target="_blank">View Processed Image</a>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
